@@ -12,7 +12,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { SectionContainer } from '@/shared/ui/container/SectionContainer';
 
-export const Algorithm = () => {
+const Genre = ({ title }: { title: string }) => {
   const items = [
     {
       id: 1,
@@ -118,13 +118,15 @@ export const Algorithm = () => {
 
   return (
     <SectionContainer paddingType={'leftOnly'}>
-      <HomeTitle title={'추천곡'} />
+      <HomeTitle title={title} />
       <div className="relative">
         <div
           className={'absolute right-5 top-[-60px] z-10 flex space-x-2 hidden bg-gray'}
-          id={'swiper-pagination'}
+          id={`swiper-pagination-${title}`}
         >
-          <button className="custom-prev-btn w-8 h-8 flex items-center justify-center bg-black/30 hover:bg-black/50 rounded-full transition-all">
+          <button
+            className={`custom-prev-btn-${title} w-8 h-8 flex items-center justify-center bg-black/30 hover:bg-black/50 rounded-full transition-all`}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -139,7 +141,9 @@ export const Algorithm = () => {
               <polyline points="15 18 9 12 15 6"></polyline>
             </svg>
           </button>
-          <button className="custom-next-btn w-8 h-8 flex items-center justify-center bg-black/30 hover:bg-black/50 rounded-full transition-all">
+          <button
+            className={`custom-next-btn-${title} w-8 h-8 flex items-center justify-center bg-black/30 hover:bg-black/50 rounded-full transition-all`}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -157,17 +161,17 @@ export const Algorithm = () => {
         </div>
         <Swiper
           modules={[Navigation, Pagination]}
-          spaceBetween={24}
           slidesPerView={'auto'}
+          allowSlideNext={true}
           navigation={{
-            nextEl: '.custom-next-btn',
-            prevEl: '.custom-prev-btn',
+            nextEl: `.custom-next-btn-${title}`,
+            prevEl: `.custom-prev-btn-${title}`,
             disabledClass: 'opacity-30 cursor-not-allowed',
           }}
           onInit={(swiper) => {
             // 초기화 후 네비게이션 활성화 및 표시
             setTimeout(() => {
-              const navContainer = document.querySelector('#swiper-pagination');
+              const navContainer = document.querySelector(`#swiper-pagination-${title}`);
               if (navContainer) navContainer.classList.remove('hidden');
               swiper.navigation?.init();
               swiper.navigation?.update();
@@ -175,7 +179,7 @@ export const Algorithm = () => {
           }}
           pagination={{
             clickable: true,
-            el: '.swiper-pagination',
+            el: `.swiper-pagination-${title}`,
           }}
           loop={false}
           className="w-full"
@@ -189,6 +193,10 @@ export const Algorithm = () => {
       </div>
     </SectionContainer>
   );
+};
+export const GenreDetail = () => {
+  const items = [{ title: '힙합' }, { title: '알앤비' }, { title: '팝' }, { title: '발라드' }];
+  return items.map((item) => <Genre key={item.title} title={item.title} />);
 };
 
 interface AlgorithmItemProps {

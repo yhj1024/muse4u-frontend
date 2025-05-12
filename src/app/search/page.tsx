@@ -1,5 +1,5 @@
-import { HomePage } from '@/views/home';
+import { SearchPage } from '@/views/search';
 
-export default function Home() {
-  return <HomePage />;
+export default function Search() {
+  return <SearchPage />;
 }

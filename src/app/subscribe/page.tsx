@@ -1,5 +1,5 @@
-import { SearchPage } from '@/views/search';
+import { SubscribePage } from '@/views/subscribe';
 
-export default function Search() {
-  return <SearchPage />;
+export default function Subscribe() {
+  return <SubscribePage />;
 }

@@ -12,7 +12,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { SectionContainer } from '@/shared/ui/container/SectionContainer';
 
-export const AlgorithmSection = () => {
+export const Algorithm = () => {
   const items = [
     {
       id: 1,
@@ -157,8 +157,8 @@ export const AlgorithmSection = () => {
         </div>
         <Swiper
           modules={[Navigation, Pagination]}
-          spaceBetween={24}
           slidesPerView={'auto'}
+          allowSlideNext={true}
           navigation={{
             nextEl: '.custom-next-btn',
             prevEl: '.custom-prev-btn',

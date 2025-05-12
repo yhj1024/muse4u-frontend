@@ -1,1 +1,1 @@
-export * from './ui/subscribe';
+export * from './ui/SubscribePage';

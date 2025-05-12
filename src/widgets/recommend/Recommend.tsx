@@ -130,7 +130,7 @@ const Category = ({ title, children }: CategoryProps) => {
   );
 };
 
-export const RecommendSection = () => {
+export const Recommend = () => {
   const [newTracks, setNewTracks] = useState<TrackData[]>(newTracksData);
   const [popularCreators, setPopularCreators] = useState<CreatorData[]>(popularCreatorsData);
   const [recentlyListenedTracks, setRecentlyListenedTracks] = useState<TrackData[]>(

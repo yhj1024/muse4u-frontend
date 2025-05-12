@@ -1,5 +1,5 @@
-import { HomePage } from '@/views/home';
+import { NoticePage } from '@/views/notice';
 
-export default function Home() {
-  return <HomePage />;
+export default function Notice() {
+  return <NoticePage />;
 }
