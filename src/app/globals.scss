@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@use "tailwindcss";
 
 :root {
   --color-border-secondary: #ffffff26;
@@ -24,6 +24,16 @@ body {
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
+}
+
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    font-synthesis: none !important;
+  }
 }
 
 .typing-cursor {

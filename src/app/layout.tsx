@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import './globals.css';
+import './globals.scss';
 import { Sidebar } from '@/widgets/sidebar';
 import fonts from '../../public/fonts/Fonts';
 import { PlayerController } from '@/widgets/player-controller';
