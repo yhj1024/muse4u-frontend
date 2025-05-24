@@ -11,6 +11,7 @@ export const Sidebar = () => {
   return (
     <Container>
       <Title />
+      <Avatar />
       <Menus />
     </Container>
   );
@@ -23,6 +24,12 @@ const Container = ({ children }: { children: React.ReactNode }) => {
     </aside>
   );
 };
+
+const Avatar = () => {
+  return <div className={'font-medium text-center rounded-2xl bg-gray-500 w-20'}>
+    로그인
+  </div>
+}
 
 const Title = () => {
   return (

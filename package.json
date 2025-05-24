@@ -8,7 +8,10 @@
     "start": "next start",
     "lint": "next lint",
     "svgr": "node scripts/svgr.mjs",
-    "svgr:watch": "node scripts/svgr.mjs && chokidar 'public/svgs/**/*.svg' -c 'pnpm svgr'"
+    "svgr:watch": "node scripts/svgr.mjs && chokidar 'public/svgs/**/*.svg' -c 'pnpm svgr'",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug"
   },
   "dependencies": {
     "next": "15.3.1",
@@ -19,6 +22,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@playwright/test": "^1.52.0",
     "@svgr/cli": "^8.1.0",
     "@svgr/core": "^8.1.0",
     "@svgr/plugin-jsx": "^8.1.0",
