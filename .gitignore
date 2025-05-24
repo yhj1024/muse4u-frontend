@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+**/node_modules
 /.pnp
 .pnp.*
 .yarn/*
@@ -12,16 +13,25 @@
 
 # testing
 /coverage
+**/coverage/
 /test-results/
+**/test-results/
 /playwright-report/
+**/playwright-report/
 /playwright/.cache/
+**/playwright/.cache/
 
 # next.js
 /.next/
+**/.next/
 /out/
+**/out/
 
 # production
 /build
+**/build/
+dist/
+**/dist/
 
 # misc
 .DS_Store
@@ -42,6 +52,10 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# turbo
+.turbo
+**/.turbo/
 
 # JetBrains IDE files
 .idea/
